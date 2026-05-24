@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Commission — Akshada</title>
+<meta name="description" content="Request a commissioned devotional work from the studio of Akshada.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500&family=JetBrains+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<nav class="nv">
+  <a class="bn" href="index.html">akshada</a>
+  <div class="nl">
+    <a href="works.html">works</a>
+    <a href="series.html">series</a>
+    <a href="journal.html">journal</a>
+    <a href="about.html">about</a>
+    <a class="on" href="commission.html">commission</a>
+  </div>
+</nav>
+
+<section class="intro">
+  <div class="intro-inner">
+    <p class="kk">— commissioned works —</p>
+    <h1>A canvas, <em>for your room.</em></h1>
+    <p>The studio accepts a small number of private commissions each year — usually four. Each begins with a conversation, and is paced to the work, not the calendar.</p>
+  </div>
+</section>
+
+<section class="commission-page">
+  <div class="commission-inner">
+
+    <div class="com-intro">
+      <p>If you would like a piece made for your home, your shrine, or someone you love, please write. The studio will respond personally — never with a quote and a timeline, but with a question or two, and a sense of whether the work is one I can honestly make.</p>
+      <p>Below is the rhythm a commission usually follows.</p>
+    </div>
+
+    <div class="com-steps">
+      <div class="com-step"><div class="com-num">i</div><div><h4>A letter</h4><p>You write to the studio with what is in your mind — a form, a feeling, a wall, a memory. Detail helps but is not required. Sometimes a single sentence is enough.</p></div></div>
+      <div class="com-step"><div class="com-num">ii</div><div><h4>A conversation</h4><p>If the work feels right for the studio, we speak — by call or by letter. We agree on size, palette, and the long, soft window in which the painting will be made.</p></div></div>
+      <div class="com-step"><div class="com-num">iii</div><div><h4>A first study</h4><p>A small painted study is sent to you, with notes. Adjustments are welcome at this stage and at no other. After this, the work and I are alone for a while.</p></div></div>
+      <div class="com-step"><div class="com-num">iv</div><div><h4>The sitting</h4><p>The canvas is painted in the studio, slowly, in the morning hours. It is not photographed in progress. You will hear from me when it is finished.</p></div></div>
+      <div class="com-step"><div class="com-num">v</div><div><h4>Delivery</h4><p>The work is varnished, blessed, and shipped wrapped in cotton. A handwritten note accompanies every painting.</p></div></div>
+    </div>
+
+    <form class="com-form" onsubmit="event.preventDefault(); this.querySelector('.com-thanks').style.display='block'; this.querySelector('.btn').disabled=true;">
+      <h3>Write to the studio</h3>
+      <p class="com-form-sub">Replies usually within a week. The studio is small — please bear with us.</p>
+
+      <div class="field"><label for="name">your name</label><input id="name" name="name" type="text" required></div>
+      <div class="field"><label for="email">email</label><input id="email" name="email" type="email" required></div>
+      <div class="field"><label for="subject">a form, a feeling, or a name</label><input id="subject" name="subject" type="text" placeholder="e.g. Adiyogi · for a north wall"></div>
+      <div class="field"><label for="size">approximate size</label>
+        <select id="size" name="size">
+          <option>small  (under 18″)</option>
+          <option>medium (18–36″)</option>
+          <option>large  (36″ and larger)</option>
+          <option>not sure yet</option>
+        </select>
+      </div>
+      <div class="field"><label for="message">tell me a little more</label><textarea id="message" name="message" placeholder="What the work is for, where it will live, anything you'd like the studio to hold in mind."></textarea></div>
+
+      <button class="btn" type="submit">send the letter →</button>
+      <p class="com-thanks" style="display:none; color:var(--terracotta); font-size:13px; margin-top:18px; font-style:italic; font-family:var(--font-serif)">Your letter is on its way. The studio will reply soon.</p>
+    </form>
+
+  </div>
+</section>
+
+<footer class="ft">
+  <div class="ft-inner">
+    <div class="ftg">
+      <div class="fcol"><h4>Studio</h4><a href="about.html">About the artist</a><a href="about.html#process">Process</a><a href="about.html#press">Press</a><a href="about.html#stockists">Stockists</a></div>
+      <div class="fcol"><h4>Works</h4><a href="works.html">Originals</a><a href="works.html?filter=prints">Limited prints</a><a href="commission.html">Commissions</a><a href="series.html">Current season</a></div>
+      <div class="fcol"><h4>Visit</h4><p>By appointment only</p><p>Pune, India</p><a href="mailto:hello@akshada.art">hello@akshada.art</a></div>
+      <div class="fcol"><h4>Follow</h4><div class="soc"><a href="#">◐</a><a href="#">▶</a><a href="#">✿</a></div><a href="#" style="margin-top:10px">Newsletter →</a></div>
+    </div>
+    <div class="fbot"><div class="fbn">akshada</div><div>© 2026 akshada studio · all rights reserved</div></div>
+  </div>
+</footer>
+
+</body>
+</html>
