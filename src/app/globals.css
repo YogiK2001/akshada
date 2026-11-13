@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+/*
+  Akshada design tokens: lifted from the cream mockup (cook/refs/R01-mockup.html).
+  Use these via Tailwind utilities: bg-cream, text-khaki, text-terracotta, font-serif, etc.
+*/
+@theme {
+  --color-cream: #faf6ee;        /* page background, hero, series */
+  --color-sand: #f4ede0;         /* alternating sections (studio note, journal) */
+  --color-parchment: #ede4d2;    /* nav bar */
+  --color-canvas: #efe6d2;       /* painting frame mat */
+  --color-khaki: #c5b48f;        /* large serif headings, motifs, footer text */
+  --color-terracotta: #c84a2e;   /* accents, kickers, links */
+  --color-terracotta-deep: #a83b22;
+  --color-ink: #2d2520;          /* italic emphasis, logo, footer bg */
+  --color-ink-soft: #3a2f25;     /* body text */
+  --color-umber: #5a4d3f;        /* nav links */
+  --color-muted: #6b5d4a;        /* secondary copy */
+  --color-taupe: #8a7d62;        /* captions, footer bottom */
+  --color-dusk: #9a8a6e;         /* footer plain text */
+  --color-quote: #4a3f30;        /* pull quote */
+  --color-indigo: #1a1f3a;       /* centered section headings, wave rule */
+  --color-gold: #d49b3e;
+  --color-night: #142840;        /* empty canvas fallback */
+
+  --font-serif: var(--font-serif-face), Gelasio, Georgia, serif;
+  --font-sans: var(--font-inter), "Inter", system-ui, sans-serif;
+
+  --tracking-kicker: 0.32em;
+  --tracking-nav: 0.18em;
+}
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body {
+    @apply bg-cream text-ink-soft font-sans antialiased;
+    font-size: 17px;
+    line-height: 1.7;
+  }
+  h1, h2 { text-wrap: balance; }
+  h3 { text-wrap: pretty; }
+  p { text-wrap: pretty; }
+  ::selection { background: var(--color-terracotta); color: var(--color-cream); }
+  :focus-visible { outline: 1.5px solid var(--color-terracotta); outline-offset: 3px; }
+}
+
+@layer components {
+  /* small lowercase spaced label in terracotta (mockup .kk / .sk) */
+  .kicker {
+    @apply text-terracotta lowercase font-medium;
+    font-size: 13px;
+    letter-spacing: var(--tracking-kicker);
+  }
+  @media (min-width: 1024px) { .kicker { font-size: 18px; } }
+  /* underlined terracotta text link (mockup .link) */
+  .text-link {
+    @apply text-terracotta border-b border-terracotta/70 pb-1 text-[16px] lg:text-[21px] transition-opacity hover:opacity-70;
+    border-bottom-width: 0.5px;
+  }
+  /* khaki serif heading with dark italic emphasis (mockup .ht / .st) */
+  .display { @apply font-serif font-medium text-khaki; letter-spacing: -0.01em; line-height: 1.08; }
+  .display em { @apply text-ink italic font-medium; }
+  /* hairline inset border used on frames and cards */
+  .hairline-inset { position: relative; }
+  .hairline-inset::before {
+    content: ""; position: absolute; inset: 7px; pointer-events: none; z-index: 1;
+    border: 0.5px solid rgba(45, 37, 32, 0.18);
+  }
+  .hairline-inset-light::before { border-color: rgba(255, 255, 255, 0.2); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+}

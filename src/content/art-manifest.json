@@ -1,0 +1,102 @@
+{
+  "adiyogi-dissolving": {
+    "width": 3990,
+    "height": 6568,
+    "sizes": [
+      640,
+      1080,
+      1800
+    ],
+    "dominant": "#080808"
+  },
+  "shiva-and-the-devotee": {
+    "width": 1293,
+    "height": 1980,
+    "sizes": [
+      640,
+      1080,
+      1800
+    ],
+    "dominant": "#181818"
+  },
+  "linga-bhairavi-on-the-lotus": {
+    "width": 1417,
+    "height": 1800,
+    "sizes": [
+      640,
+      1080,
+      1800
+    ],
+    "dominant": "#380808"
+  },
+  "bhairavi-by-lamplight": {
+    "width": 3480,
+    "height": 4800,
+    "sizes": [
+      640,
+      1080,
+      1800
+    ],
+    "dominant": "#280808"
+  },
+  "linga-on-the-lotus": {
+    "width": 842,
+    "height": 1051,
+    "sizes": [
+      640,
+      1080,
+      1800
+    ],
+    "dominant": "#a89898"
+  },
+  "from-form-to-the-formless": {
+    "width": 806,
+    "height": 1334,
+    "sizes": [
+      640,
+      1080,
+      1800
+    ],
+    "dominant": "#180808"
+  },
+  "naga": {
+    "width": 4223,
+    "height": 6611,
+    "sizes": [
+      640,
+      1080,
+      1800
+    ],
+    "dominant": "#080808"
+  },
+  "hanuman-in-dhyana": {
+    "width": 4168,
+    "height": 6085,
+    "sizes": [
+      640,
+      1080,
+      1800
+    ],
+    "dominant": "#581808"
+  },
+  "ganapati": {
+    "width": 2724,
+    "height": 4403,
+    "sizes": [
+      640,
+      1080,
+      1800
+    ],
+    "dominant": "#080808"
+  },
+  "night-at-the-lotus-pond": {
+    "width": 2717,
+    "height": 2313,
+    "sizes": [
+      640,
+      1080,
+      1800
+    ],
+    "dominant": "#080808"
+  }
+}

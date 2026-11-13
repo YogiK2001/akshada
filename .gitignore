@@ -1,6 +1,17 @@
+node_modules/
+.next/
+out/
+next-env.d.ts
+*.tsbuildinfo
 .DS_Store
 Thumbs.db
 .vscode/
 .idea/
 *.log
-node_modules/
+.env*
+# original full-resolution photos stay local; optimized copies live in public/art
+images/
+# cook run state (local only)
+cook/
+cook-archive/
+.claude/

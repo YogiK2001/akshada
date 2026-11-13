@@ -1,45 +1,58 @@
-# akshada — artist website
+# Akshada: devotional art on canvas
 
-A small, static multi-page site for the painter Akshada — built from a cream-and-terracotta visual language with conch and feather motifs, in tribute to devotional art.
+Website for the painter Akshada. Built with Next.js (static export) and Tailwind CSS, deployed to GitHub Pages.
 
-## Pages
-
-| Page              | File                |
-| ----------------- | ------------------- |
-| Home              | `index.html`        |
-| Works (gallery)   | `works.html`        |
-| Series            | `series.html`       |
-| Journal           | `journal.html`      |
-| About             | `about.html`        |
-| Commission        | `commission.html`   |
-
-## Local preview
-
-It's pure HTML/CSS — open `index.html` in a browser, or serve the folder:
+## Run locally
 
 ```bash
-python -m http.server 8000
-# then open http://localhost:8000
+npm install
+npm run dev        # http://localhost:3000
 ```
 
-## Adding real artwork
+Production build (static files in `out/`):
 
-Drop image files into `images/` using the names listed in `images/README.md`. Missing images fall back to stylized SVG/glyph placeholders automatically (via `onerror`).
+```bash
+npm run build
+npm start          # serves out/ on http://localhost:3000
+```
 
-## Deployment
+## Editing content
 
-Deployed via GitHub Pages from the `main` branch root.
+Everything Akshada may want to change is plain data:
+
+| What | File |
+| --- | --- |
+| Email, city, WhatsApp number, social links | `src/lib/site.ts` |
+| Paintings (titles, years, descriptions) | `src/content/artworks.ts` |
+| The six series | `src/content/series.ts` |
+| Journal posts | `src/content/journal.ts` |
+
+### WhatsApp
+
+The commission form and the "enquire" buttons open WhatsApp with a ready-written message.
+Set `whatsapp` in `src/lib/site.ts` to her number in international format, digits only
+(for India: `91` followed by the 10-digit number). While it is empty, WhatsApp opens and
+the visitor chooses who to send the message to.
+
+### Adding a painting
+
+1. Put the original photo in `images/` (this folder is not committed).
+2. Add `"<slug>": "<filename>"` to `scripts/art-sources.json`.
+3. Run `npm run images`. This writes web-sized WebP files to `public/art/` and updates `src/content/art-manifest.json`.
+4. Add an entry with the same slug to `src/content/artworks.ts`.
+
+## Deploying
+
+Every push to `main` builds and deploys through `.github/workflows/deploy.yml`
+(Settings → Pages → Source: GitHub Actions). The site is served under `/akshada`, set by `PAGES_BASE_PATH`.
 
 ## Structure
 
 ```
-.
-├── index.html          home
-├── works.html          gallery
-├── series.html         six series
-├── journal.html        studio notes
-├── about.html          artist bio
-├── commission.html     commission flow + form
-├── css/styles.css      shared styles
-└── images/             artwork (drop files here)
+src/app/            pages (home, works, works/[slug], series, journal, journal/[slug], about, commission)
+src/components/     shared UI: nav, footer, framed paintings, line-art motifs
+src/content/        paintings, series, journal
+src/lib/site.ts     site settings
+scripts/            image optimisation
+public/art/         optimised paintings
 ```

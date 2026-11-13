@@ -1,0 +1,37 @@
+{
+  "adiyogi-dissolving": "IMG20251118114143.jpg.jpeg",
+  "shiva-and-the-devotee": "IMG_20250707_214932.jpg.jpeg",
+  "linga-bhairavi-on-the-lotus": "IMG_20250722_191645_230.webp",
+  "bhairavi-by-lamplight": {
+    "file": "IMG20250928145532.jpg.jpeg",
+    "crop": {
+      "left": 0.115,
+      "top": 0.08,
+      "width": 0.58,
+      "height": 0.6
+    }
+  },
+  "linga-on-the-lotus": {
+    "file": "IMG_20260511_092452_142.webp",
+    "crop": {
+      "left": 0.095,
+      "top": 0.065,
+      "width": 0.78,
+      "height": 0.73
+    }
+  },
+  "from-form-to-the-formless": {
+    "file": "IMG_20260126_144225_459.jpg.jpeg",
+    "rotate": -30,
+    "crop": {
+      "left": 0.295,
+      "top": 0.18,
+      "width": 0.365,
+      "height": 0.56
+    }
+  },
+  "naga": "IMG20250611201754.jpg.jpeg",
+  "hanuman-in-dhyana": "IMG20250622104931 (5).jpg.jpeg",
+  "ganapati": "Picsart_25-08-25_19-23-46-561.jpg.jpeg",
+  "night-at-the-lotus-pond": "Picsart_25-09-23_12-58-40-267.jpg.jpeg"
+}
