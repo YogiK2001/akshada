@@ -8,6 +8,7 @@
     "build": "next build && node scripts/fix-export.mjs",
     "start": "npx serve out -l 3000",
     "images": "node scripts/optimize-images.mjs",
+    "deploy": "node scripts/deploy-pages.mjs",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {

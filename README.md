@@ -43,8 +43,16 @@ the visitor chooses who to send the message to.
 
 ## Deploying
 
-Every push to `main` builds and deploys through `.github/workflows/deploy.yml`
-(Settings → Pages → Source: GitHub Actions). The site is served under `/akshada`, set by `PAGES_BASE_PATH`.
+```bash
+npm run deploy
+```
+
+This builds the site with the `/akshada` base path and publishes `out/` to the `gh-pages` branch,
+which GitHub Pages serves (Settings → Pages → Deploy from a branch → `gh-pages`, `/`).
+Live at https://yogik2001.github.io/akshada/.
+
+`.github/workflows/deploy.yml` is an alternative that builds on GitHub Actions; it is set to manual
+runs only until Actions is available on the account.
 
 ## Structure
 

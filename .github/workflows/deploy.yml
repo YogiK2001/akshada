@@ -1,8 +1,9 @@
 name: Deploy to GitHub Pages
 
+# Manual only for now: the account's Actions runners are unavailable, so the site is
+# published with `npm run deploy` (gh-pages branch). To switch back, restore the push
+# trigger and set Settings -> Pages -> Source to "GitHub Actions".
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
 
 permissions:
