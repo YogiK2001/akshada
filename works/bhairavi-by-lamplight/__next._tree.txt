@@ -1,0 +1,9 @@
+:HL["/akshada/_next/static/chunks/1iircbqvu85jm.css","style"]
+:HL["/akshada/_next/static/media/64bd0c12f2d04ccc-s.p.1k_usjk-2sb8e.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/akshada/_next/static/media/6b20d49f161a4e7c-s.p.38w-4nzro09n-.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/akshada/_next/static/media/7a01dec39b324ce3-s.p.2_7gz-nbwppeo.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/akshada/art/bhairavi-by-lamplight-1080.webp","image",{"imageSrcSet":"/akshada/art/bhairavi-by-lamplight-640.webp 640w, /akshada/art/bhairavi-by-lamplight-1080.webp 1080w, /akshada/art/bhairavi-by-lamplight-1800.webp 1800w","imageSizes":"(min-width: 1024px) 700px, 100vw","fetchPriority":"high"}]
+3:[["children",{"s":"__PAGE__","h":160}]]
+2:[["children",{"s":{"n":"slug","t":"d","k":"bhairavi-by-lamplight","s":[]},"h":65632,"c":"$Q3"}]]
+1:[["children",{"s":"works","h":131136,"c":"$Q2"}]]
+0:{"b":"Jat8khT5wTUUShpXMt1PG","t":{"t":{"s":"","h":131088,"c":"$Q1"}}}

@@ -1,0 +1,29 @@
+2:"$Sreact.fragment"
+3:"/akshada/_next/static/chunks/29futp_3qrg1b.js"
+4:I[39756,["$3"],"default"]
+5:I[37457,["$3"],"default"]
+a:"/akshada/_next/static/chunks/1qtvzoql2m7nx.js"
+b:"/akshada/_next/static/chunks/0y_hd297lidw7.js"
+c:I[78477,["$3","$a","$b"],"WorksBrowser"]
+d:I[96199,["$3","$a","$b"],"Reveal"]
+e:I[97367,["$3"],"OutletBoundary"]
+f:"$Sreact.suspense"
+12:"ViewportBoundary"
+13:I[97367,["$3"],"$12"]
+14:"MetadataBoundary"
+15:I[97367,["$3"],"$14"]
+16:I[27201,["$3"],"IconMark"]
+7:X
+7:C
+8:X
+9:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$2","c",{"children":[[["$","$Lc",null,{}],["$","section",null,{"aria-labelledby":"how-to-buy-h","data-tone":"sand","className":"py-section bg-sand text-ink ","children":["$","div",null,{"className":"container-x ","children":["$","$Ld",null,{"children":[["$","h2",null,{"id":"how-to-buy-h","className":"text-h2 text-khaki-deep","children":"How to buy"}],["$","ol",null,{"className":"mt-10 grid gap-8 border-t border-line pt-8 md:grid-cols-3 md:gap-10","children":[["$","li","Enquire on WhatsApp",{"children":[["$","h3",null,{"className":"text-h3","children":"Enquire on WhatsApp"}],["$","p",null,{"className":"mt-3 max-w-[40ch] text-muted","children":"Message Akshada about the painting you have in mind."}]]}],["$","li","Akshada replies",{"children":[["$","h3",null,{"className":"text-h3","children":"Akshada replies"}],["$","p",null,{"className":"mt-3 max-w-[40ch] text-muted","children":"She writes back with the price and the details of the painting."}]]}],["$","li","The painting is yours",{"children":[["$","h3",null,{"className":"text-h3","children":"The painting is yours"}],["$","p",null,{"className":"mt-3 max-w-[40ch] text-muted","children":"Once you have decided, the original is yours to live with."}]]}]]}],["$","div",null,{"className":"mt-10","children":["$","a",null,{"href":"https://wa.me/?text=Namaste%20Akshada%2C%20I%20would%20like%20to%20ask%20about%20your%20paintings.","className":"inline-flex min-h-12 items-center justify-center gap-2 rounded-[var(--radius-btn)] px-6 text-[16px] font-medium leading-none whitespace-nowrap transition-[transform,background-color,border-color,color] duration-200 active:scale-[0.98] select-none bg-terracotta-deep text-cream hover:bg-terracotta-dark ","target":"_blank","rel":"noopener noreferrer","children":"Enquire on WhatsApp"}]}]]}]}]}]],[["$","script","script-0",{"src":"/akshada/_next/static/chunks/1qtvzoql2m7nx.js","async":true}],["$","script","script-1",{"src":"/akshada/_next/static/chunks/0y_hd297lidw7.js","async":true}]],["$","$Le",null,{"children":["$","$f",null,{"name":"Next.MetadataOutlet","children":"$@10"}]}]]}],"p":"$@11","v":null,"s":"$8"}}]]
+1:[["children",{"s":"works","h":64,"d":{"r":["$","$2","c",{"children":[null,["$","$L4",null,{"parallelRouterKey":"children","template":["$","$L5",null,{}]}]]}],"p":"$@6","v":"$7","s":"$8"},"c":"$Q9"}]]
+0:{"t":{"t":{"s":"","h":16,"c":"$Q1"},"h":{"r":["$","$2","h",{"children":[null,["$","$L13",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","2",{"name":"theme-color","content":"#faf6ee"}]]}],["$","$L15",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$f",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Akshada: ten acrylic paintings in six series"}],["$","meta","1",{"name":"description","content":"Ten original devotional paintings in acrylic by Akshada, in six series: Adiyogi, Devi, Linga, Naga, Bhakti and Lotus on Water. Open one to read about it or to ask about it on WhatsApp."}],["$","meta","2",{"property":"og:title","content":"Akshada: ten acrylic paintings in six series"}],["$","meta","3",{"property":"og:description","content":"Ten original devotional paintings in acrylic by Akshada, in six series: Adiyogi, Devi, Linga, Naga, Bhakti and Lotus on Water. Open one to read about it or to ask about it on WhatsApp."}],["$","meta","4",{"property":"og:type","content":"website"}],["$","meta","5",{"name":"twitter:card","content":"summary"}],["$","meta","6",{"name":"twitter:title","content":"Akshada: ten acrylic paintings in six series"}],["$","meta","7",{"name":"twitter:description","content":"Ten original devotional paintings in acrylic by Akshada, in six series: Adiyogi, Devi, Linga, Naga, Bhakti and Lotus on Water. Open one to read about it or to ask about it on WhatsApp."}],["$","link","8",{"rel":"icon","href":"/akshada/favicon.svg"}],["$","$L16","9",{}]]}]}],null]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],"p":"$@17","v":null,"s":"$8"}},"a":"$@18","u":"$@19","b":"Jat8khT5wTUUShpXMt1PG"}
+10:null
+19:true
+8:300
+8:C
+18:0
+6:"$undefined"
+17:"$undefined"
+11:"$undefined"

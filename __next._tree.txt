@@ -1,0 +1,6 @@
+:HL["/akshada/_next/static/chunks/1iircbqvu85jm.css","style"]
+:HL["/akshada/_next/static/media/64bd0c12f2d04ccc-s.p.1k_usjk-2sb8e.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/akshada/_next/static/media/6b20d49f161a4e7c-s.p.38w-4nzro09n-.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/akshada/_next/static/media/7a01dec39b324ce3-s.p.2_7gz-nbwppeo.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+1:[["children",{"s":"__PAGE__","h":128}]]
+0:{"b":"Jat8khT5wTUUShpXMt1PG","t":{"t":{"s":"","h":16,"c":"$Q1"}}}
