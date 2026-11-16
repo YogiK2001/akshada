@@ -1,43 +1,78 @@
-import Link from "next/link";
-import { Conch } from "@/components/motifs";
-import { Container } from "@/components/ui";
-import { FramedArt } from "@/components/ArtImage";
+"use client";
 
+import { useRef } from "react";
+import { ButtonLink } from "@/components/Button";
+import { Container } from "@/components/Container";
+import { Painting } from "@/components/Painting";
+import { Conch } from "@/components/motifs";
+import { gsap, MOTION_OK, useGSAP } from "@/lib/gsap";
+
+/**
+ * Home hero: the words on the left, Adiyogi, Dissolving whole on a mat on the right (after the buttons on phones).
+ * Entrance, once on load: the lines rise 24px and fade in 80ms apart; the painting fades in and settles from 1.04.
+ * The server HTML is complete and visible; start states are set by the script only, never under reduced motion.
+ */
 export function Hero() {
+  const root = useRef<HTMLElement>(null);
+
+  useGSAP(
+    () => {
+      const mm = gsap.matchMedia();
+      mm.add(MOTION_OK, () => {
+        const tl = gsap.timeline({ defaults: { duration: 0.9, ease: "power3.out" } });
+        tl.from("[data-hero-line]", { y: 24, opacity: 0, stagger: 0.08, clearProps: "transform,opacity" }, 0).from(
+          "[data-hero-art]",
+          { scale: 1.04, opacity: 0, clearProps: "transform,opacity" },
+          0.1,
+        );
+      });
+      return () => mm.revert();
+    },
+    { scope: root },
+  );
+
   return (
-    <section data-shot="S01" className="relative overflow-hidden bg-cream py-16 sm:py-24 lg:pb-32 lg:pt-28">
-      <div className="pointer-events-none absolute inset-x-0 bottom-0" aria-hidden="true">
-        <Container>
-          <Conch className="block w-[200px] translate-y-1/4 opacity-40 sm:w-[300px] lg:w-[420px] lg:translate-y-[40%]" />
-        </Container>
-      </div>
-      <Container className="relative">
-        <div className="grid items-center gap-12 lg:grid-cols-[1.2fr_1fr] lg:gap-16">
-          <div>
-            <p className="kicker mb-6 lg:mb-8">— devotional art on canvas —</p>
-            <h1 className="display text-[40px] sm:text-[60px] lg:text-[76px] xl:text-[84px]">
-              <span className="block lg:whitespace-nowrap">In the stillness</span>
-              <span className="block lg:whitespace-nowrap">
-                of <em>Adiyogi</em>,
-              </span>
-              <span className="block lg:whitespace-nowrap">the colour begins.</span>
-            </h1>
-            <p className="mt-7 max-w-[600px] text-[16px] leading-[1.75] text-muted sm:text-[17px] lg:text-[23px]">
-              A small studio of hand-painted works in tribute to the formless: Shiva, Devi, and the inner mountain we each carry.
-            </p>
-            <Link href="/works/" className="text-link mt-9 inline-block lg:mt-10">
-              enter the gallery →
-            </Link>
+    <section
+      ref={root}
+      data-tone="cream"
+      aria-labelledby="hero-h"
+      className="bg-cream pt-[clamp(24px,3vw,40px)] pb-[clamp(72px,9vw,136px)] text-ink"
+    >
+      <Container className="grid items-center gap-12 lg:min-h-[calc(88svh-72px)] lg:grid-cols-12 lg:gap-8">
+        <div className="lg:col-span-6">
+          <div data-hero-line>
+            <Conch className="mb-8 w-[88px] sm:w-[104px]" />
           </div>
-          <Link href="/works/adiyogi-dissolving/" className="mx-auto block w-full max-w-[320px] sm:max-w-[420px] lg:justify-self-end lg:ml-auto lg:mr-0 lg:max-w-[540px]">
-            <FramedArt
+          <h1 id="hero-h" data-hero-line className="max-w-[13ch] text-h1">
+            Devotional paintings, made slowly in Pune
+          </h1>
+          <p data-hero-line className="mt-7 max-w-[40ch] text-lead text-muted">
+            Ten original paintings in acrylic, of Adiyogi, the Devi and the lotus pond, for a wall at home or a quiet shrine.
+          </p>
+          <div data-hero-line className="mt-9 flex flex-wrap items-center gap-x-6 gap-y-3">
+            <ButtonLink href="/works/">View the paintings</ButtonLink>
+            <ButtonLink href="/about/" variant="quiet">
+              About the artist
+            </ButtonLink>
+          </div>
+        </div>
+        <div className="lg:col-span-6 lg:col-start-7">
+          <div data-hero-art>
+            <Painting
               slug="adiyogi-dissolving"
-              ratio="3 / 4"
+              sizes="(min-width: 1024px) 620px, 88vw"
               priority
-              sizes="(min-width: 1024px) 540px, 90vw"
-              caption={{ left: "n° 01 / adiyogi series", right: "2025" }}
+              mat="sand"
+              maxHeight="min(86svh, 880px)"
+              className="mx-auto"
+              caption={
+                <span className="flex flex-wrap justify-between gap-x-4 gap-y-0.5">
+                  <span className="font-serif text-[17px] text-ink">Adiyogi, Dissolving</span>
+                  <span>Acrylic on canvas, 2025</span>
+                </span>
+              }
             />
-          </Link>
+          </div>
         </div>
       </Container>
     </section>

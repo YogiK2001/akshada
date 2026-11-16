@@ -1,19 +1,17 @@
-import type { Metadata } from "next";
-import { PageIntro } from "@/components/ui";
-import { GalleryGrid } from "@/components/works/GalleryGrid";
+import { HowToBuyBand } from "@/components/works/HowToBuy";
+import { WorksBrowser } from "@/components/works/WorksBrowser";
+import { pageMeta } from "@/lib/meta";
 
-export const metadata: Metadata = {
-  title: "Works",
-  description: "Hand-painted devotional originals by Akshada, made slowly, one long sitting at a time.",
-};
+export const metadata = pageMeta(
+  "Akshada: ten acrylic paintings in six series",
+  "Ten original devotional paintings in acrylic by Akshada, in six series: Adiyogi, Devi, Linga, Naga, Bhakti and Lotus on Water. Open one to read about it or to ask about it on WhatsApp.",
+);
 
 export default function WorksPage() {
   return (
     <>
-      <PageIntro kicker="the gallery" title={<>Each canvas, <em>a long sitting.</em></>}>
-        <p>Every painting here is a hand-painted original, made slowly in acrylic, one layer at a time. Choose a series, or wander through them all.</p>
-      </PageIntro>
-      <GalleryGrid />
+      <WorksBrowser />
+      <HowToBuyBand />
     </>
   );
 }
