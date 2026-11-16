@@ -1,75 +1,168 @@
 @import "tailwindcss";
 
 /*
-  Akshada design tokens: lifted from the cream mockup (cook/refs/R01-mockup.html).
-  Use these via Tailwind utilities: bg-cream, text-khaki, text-terracotta, font-serif, etc.
+  Akshada design tokens (DESIGN.md is the source of truth).
+  Colours:  bg-cream, bg-sand, bg-ink, text-ink, text-muted, text-terracotta, text-khaki, text-gold, border-line
+  Type:     font-serif (Source Serif 4), font-sans (Libre Franklin)
+            text-h1, text-h2, text-h3, text-lead, text-body, text-small (size + line height + tracking)
+  Recipes:  py-section (section padding block), container-x (max width + side padding), mat, link-quiet
 */
+
+@theme inline {
+  --font-serif: var(--font-source-serif), Georgia, "Times New Roman", serif;
+  --font-sans: var(--font-libre-franklin), system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
 @theme {
-  --color-cream: #faf6ee;        /* page background, hero, series */
-  --color-sand: #f4ede0;         /* alternating sections (studio note, journal) */
-  --color-parchment: #ede4d2;    /* nav bar */
-  --color-canvas: #efe6d2;       /* painting frame mat */
-  --color-khaki: #c5b48f;        /* large serif headings, motifs, footer text */
-  --color-terracotta: #c84a2e;   /* accents, kickers, links */
+  --color-cream: #faf6ee;
+  --color-sand: #f1e8d8;
+  --color-ink: #2d2520;
+  --color-muted: #6b5d4a;
+  --color-terracotta: #c84a2e;
+  /* darker shade of the accent: hover on primary buttons, error text (5.9:1 on cream) */
   --color-terracotta-deep: #a83b22;
-  --color-ink: #2d2520;          /* italic emphasis, logo, footer bg */
-  --color-ink-soft: #3a2f25;     /* body text */
-  --color-umber: #5a4d3f;        /* nav links */
-  --color-muted: #6b5d4a;        /* secondary copy */
-  --color-taupe: #8a7d62;        /* captions, footer bottom */
-  --color-dusk: #9a8a6e;         /* footer plain text */
-  --color-quote: #4a3f30;        /* pull quote */
-  --color-indigo: #1a1f3a;       /* centered section headings, wave rule */
+  /* hover on primary buttons */
+  --color-terracotta-dark: #8a2f1b;
+  --color-khaki: #c5b48f;
+  /* khaki-brown for large serif display headings on cream / sand (5.2:1 on cream) */
+  --color-khaki-deep: #7a6440;
   --color-gold: #d49b3e;
-  --color-night: #142840;        /* empty canvas fallback */
+  /* hairline on light grounds: ink at 12% */
+  --color-line: rgb(45 37 32 / 0.12);
 
-  --font-serif: var(--font-serif-face), Gelasio, Georgia, serif;
-  --font-sans: var(--font-inter), "Inter", system-ui, sans-serif;
+  --text-h1: clamp(40px, 6vw, 84px);
+  --text-h1--line-height: 1.04;
+  --text-h1--letter-spacing: -0.02em;
+  --text-h2: clamp(30px, 3.6vw, 52px);
+  --text-h2--line-height: 1.1;
+  --text-h2--letter-spacing: -0.02em;
+  --text-h3: clamp(22px, 1.9vw, 26px);
+  --text-h3--line-height: 1.25;
+  --text-h3--letter-spacing: -0.01em;
+  --text-lead: clamp(19px, 1.6vw, 22px);
+  --text-lead--line-height: 1.5;
+  --text-body: 17px;
+  --text-body--line-height: 1.65;
+  --text-small: 14px;
+  --text-small--line-height: 1.5;
 
-  --tracking-kicker: 0.32em;
-  --tracking-nav: 0.18em;
+  --radius-mat: 6px;
+  --radius-btn: 8px;
+
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* the container: max width 1280px, equal side padding 20 / 40 / 64px */
+@utility container-x {
+  width: 100%;
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-inline: 20px;
+  @media (width >= 40rem) { padding-inline: 40px; }
+  @media (width >= 64rem) { padding-inline: 64px; }
+}
+
+/* the section rhythm, the same on light and dark grounds */
+@utility py-section {
+  padding-block: clamp(72px, 9vw, 136px);
+}
+
+/* a framed painting: a sand mat with a hairline inset */
+@utility mat {
+  position: relative;
+  padding: 14px;
+  border-radius: var(--radius-mat);
+  background: var(--color-sand);
+  @media (width >= 40rem) { padding: 20px; }
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 7px;
+    border: 1px solid var(--color-line);
+    border-radius: 3px;
+    pointer-events: none;
+  }
+}
+@utility mat-ink {
+  background: var(--color-ink);
+  &::after { border-color: rgb(197 180 143 / 0.28); }
+}
+
+/* text link whose underline draws on hover */
+@utility link-quiet {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-weight: 500;
+  text-decoration: none;
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 10px;
+    height: 1px;
+    background: currentColor;
+    transform: scaleX(0.35);
+    transform-origin: left;
+    transition: transform 300ms var(--ease-out-soft);
+  }
+  &:hover::after, &:focus-visible::after { transform: scaleX(1); }
+}
+/* nav links: no underline at rest; drawn on hover and for the current page */
+@utility link-nav {
+  &.link-quiet::after { transform: scaleX(0); }
+  &.link-quiet:hover::after, &.link-quiet:focus-visible::after, &.link-quiet[aria-current="page"]::after { transform: scaleX(1); }
 }
 
 @layer base {
-  html { scroll-behavior: smooth; }
-  body {
-    @apply bg-cream text-ink-soft font-sans antialiased;
-    font-size: 17px;
-    line-height: 1.7;
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
   }
-  h1, h2 { text-wrap: balance; }
-  h3 { text-wrap: pretty; }
-  p { text-wrap: pretty; }
+  @media (prefers-reduced-motion: no-preference) {
+    html { scroll-behavior: smooth; }
+  }
+  body {
+    background: var(--color-cream);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: var(--text-body);
+    line-height: var(--text-body--line-height);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  h1, h2, h3 {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+  p, li, figcaption { text-wrap: pretty; }
   ::selection { background: var(--color-terracotta); color: var(--color-cream); }
-  :focus-visible { outline: 1.5px solid var(--color-terracotta); outline-offset: 3px; }
+
+  /* one focus ring on everything interactive */
+  :focus-visible {
+    outline: 2px solid var(--color-terracotta);
+    outline-offset: 2px;
+  }
+
+  /* anchored sections land below the sticky nav */
+  [id] { scroll-margin-top: 88px; }
 }
 
-@layer components {
-  /* small lowercase spaced label in terracotta (mockup .kk / .sk) */
-  .kicker {
-    @apply text-terracotta lowercase font-medium;
-    font-size: 13px;
-    letter-spacing: var(--tracking-kicker);
-  }
-  @media (min-width: 1024px) { .kicker { font-size: 18px; } }
-  /* underlined terracotta text link (mockup .link) */
-  .text-link {
-    @apply text-terracotta border-b border-terracotta/70 pb-1 text-[16px] lg:text-[21px] transition-opacity hover:opacity-70;
-    border-bottom-width: 0.5px;
-  }
-  /* khaki serif heading with dark italic emphasis (mockup .ht / .st) */
-  .display { @apply font-serif font-medium text-khaki; letter-spacing: -0.01em; line-height: 1.08; }
-  .display em { @apply text-ink italic font-medium; }
-  /* hairline inset border used on frames and cards */
-  .hairline-inset { position: relative; }
-  .hairline-inset::before {
-    content: ""; position: absolute; inset: 7px; pointer-events: none; z-index: 1;
-    border: 0.5px solid rgba(45, 37, 32, 0.18);
-  }
-  .hairline-inset-light::before { border-color: rgba(255, 255, 255, 0.2); }
+/* consecutive sections on the same ground share one gap (unlayered, so it wins over the py-section utility) */
+section[data-tone="cream"] + section[data-tone="cream"],
+section[data-tone="sand"] + section[data-tone="sand"],
+section[data-tone="ink"] + section[data-tone="ink"] {
+  padding-top: 0;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
